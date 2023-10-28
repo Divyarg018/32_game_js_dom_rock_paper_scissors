@@ -12,5 +12,21 @@ const game = () => {
             introScreen.classList.add("fadeOut");
             match.classList.add("fadeIn");
         });
+    };
+
+    const playMatch = () => {
+        const options = document.querySelectorAll(".options button");
+        const playerHand = document.querySelector(".player-hand");
+        const computerHand = document.querySelector(".computer-hand");
+        const hands = document.querySelectorAll(".hands img");
+    
+        hands.forEach(hand => {
+          hand.addEventListener("animationend", function() {
+            this.style.animation = "";
+          });
+        });
     }
-};
+}
+
+
+
