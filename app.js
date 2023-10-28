@@ -34,10 +34,16 @@ const game = () => {
                 const computerNumber = Math.floor(Math.random() * 3);
                 const computerChoice = computerOptions[computerNumber];
 
-                compareHands(this.textContent, computerChoice);
+                setTimeout(() => {
 
-                playerHand.src = `./img/${this.textContent}.png`;
-                computerHand.src = `./img/${computerChoice}.png`;
+                    compareHands(this.textContent, computerChoice);
+
+                    playerHand.src = `./img/${this.textContent}.png`;
+                    computerHand.src = `./img/${computerChoice}.png`;
+                }, 2000);
+
+                playerHand.style.animation = "shakePlayer 2s ease";
+                computerHand.style.animation = "shakeComputer 2s ease";
 
 
 
@@ -102,12 +108,6 @@ const game = () => {
             }
         }
     };
-
-
-
-
-
-
 
     startGame();
     playMatch();
