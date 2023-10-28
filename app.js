@@ -46,7 +46,18 @@ const compareHands = (playerChoice, computerChoice) => {
       winner.textContent = "It is a tie";
       return;
     }
-}
+    if (playerChoice === "rock") {
+        if (computerChoice === "scissors") {
+          winner.textContent = "Player Wins";
+         
+          return;
+        } else {
+          winner.textContent = "Computer Wins";
+         
+          return;
+        }
+      }
+    }
 
         
 
