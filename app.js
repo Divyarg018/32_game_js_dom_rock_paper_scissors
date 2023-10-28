@@ -71,7 +71,20 @@ const game = () => {
                 return;
             }
         }
-    }
+        if (playerChoice === "scissors") {
+            if (computerChoice === "rock") {
+                winner.textContent = "Computer Wins";
+                cScore++;
+                updateScore();
+                return;
+            } else {
+                winner.textContent = "Player Wins";
+                pScore++;
+                updateScore();
+                return;
+            }
+        }
+    };
 
 
 
