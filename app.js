@@ -34,8 +34,23 @@ const game = () => {
                 const computerNumber = Math.floor(Math.random() * 3);
                 const computerChoice = computerOptions[computerNumber];
 
+                compareHands(this.textContent, computerChoice);
+
+                playerHand.src = `./img/${this.textContent}.png`;
+                computerHand.src = `./img/${computerChoice}.png`;
+
+
+
             });
         });
+    };
+
+
+    const updateScore = () => {
+        const playerScore = document.querySelector(".player-score p");
+        const computerScore = document.querySelector(".computer-score p");
+        playerScore.textContent = pScore;
+        computerScore.textContent = cScore;
     };
 
     const compareHands = (playerChoice, computerChoice) => {
